@@ -36,7 +36,6 @@ public class EnemyMovement : MonoBehaviour
             if (changedState)
             {
                 ChooseDirection();
-                findPlayer();
                 changedState = false;
             }
             WalkAround();
