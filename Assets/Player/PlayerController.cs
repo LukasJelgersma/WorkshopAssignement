@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -39,5 +40,15 @@ public class PlayerController : MonoBehaviour
             sphere.transform.position = hit.point;
             Destroy(sphere, 1f); // destroy sphere after 1 second
         } 
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            // Destroy the pickup object
+            Destroy(other.gameObject);
+            
+        }
     }
 }
